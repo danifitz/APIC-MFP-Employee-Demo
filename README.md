@@ -9,3 +9,6 @@
 ## Usage
 
 Add guide to use this demo
+
+Add a datasources.json file to `EmployeeAPI/server/`
+It's purposely left out of this repository to prevent passwords to db's being stored in public source control. HOST THIS FILE ON BOX
