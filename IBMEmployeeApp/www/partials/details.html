@@ -1,0 +1,26 @@
+<ion-view class="pane" title="Details" hide-back-button="false" cache-view="false" hide-nav-bar="false">
+    <ion-content padding="true">
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="img/employee/{{employee.img}}">
+                <h2 class="empName karla">{{employee.first_name}} {{employee.last_name}}</h2>
+                <p class="empTitle merriweather">{{employee.job_title}}</b>
+                </p>
+            </div>
+            <a href="#" class="item item-icon-left item-text-wrap item-emp-card karla size14px">
+                <i class="icon ion-home"></i>{{employeeDetails.address}}
+            </a>
+            <a href="#" class="item item-icon-left item-emp-card merriweather size14px">
+                <i class="icon ion-ios-telephone"></i>{{employeeDetails.mobile}}
+            </a>
+            <a href="#" class="item item-icon-left item-emp-card karla size14px">
+                <i class="icon ion-email"></i>{{employeeDetails.email}}
+            </a>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#"><i class="icon ion-thumbsup"></i>Like</a>
+                <a class="tab-item" href="#"><i class="icon ion-chatbox"></i>Comment</a>
+                <a class="tab-item" href="#"><i class="icon ion-share"></i>Share</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Licensed Materials - Property of IBM
+	5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<mfp:adapter name="AuthAdapter"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mfp="http://www.ibm.com/mfp/integration"
+	xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+	<displayName>AuthAdapter</displayName>
+	<description>AuthAdapter</description>
+
+	<securityCheckDefinition name="AuthAdapter" class="com.ibm.dtf.AuthAdapterResource">
+    <property name="maxAttempts" defaultValue="3" description="How many attempts
+			you get" />
+		<property name="blockedStateExpirationSec" defaultValue="10" description="
+			How long before the client can try again (in seconds)" />
+	  <property name="successStateExpirationSec" defaultValue="60" description="
+			How long is a successful state valid for in secs" />
+	  <property name="rememberMeDurationSec" defaultValue="120" description="
+			How long is the user remembered when using RememberMe (seconds)"/>
+	</securityCheckDefinition>
+</mfp:adapter>

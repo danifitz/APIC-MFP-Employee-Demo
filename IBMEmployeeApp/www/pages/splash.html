@@ -1,0 +1,33 @@
+<ion-view class="" title="" hide-nav-bar="true" cache-view="false" hide-back-button="true">
+  <ion-content scroll="false">
+    <div class="item item-image">
+            <!-- Replace with customer/custom background -->
+            <img src="img/login/bg7.png" height="760px" class="bgImg">
+    </div>
+    <div class="col col-center splashMsg" id="splashMsg">
+        <!-- Replace with customer logo -->
+        <!--<img ng-src="img/fpl_logo.png">-->
+
+        <!-- Replace with your application name or slogo -->
+        <br><p class="splashSlogo">IBM Employee<br>Finder</p>
+    </div>
+    <center>
+      <div class="list overlay box" id="splash-next-box" style="display:none;">
+          <button class="button button-block button-positive rFont" on-tap="doShowLogin()">Login</button>
+          <button class="button button-block button-positive rFont" ui-sref="auth.signup">Sign Up</button>            
+      </div>
+      <div class="list overlay lBox" id="login-box" style="display:none;">
+          <div class="loginOpacity">
+              <label class="item item-input rFont">
+                <input type="text" placeholder="Enter your username" ng-model="user.username" class="rFont">
+              </label>
+              <label class="item item-input">
+                <input type="password" placeholder="Enter your password" ng-model="user.password" class="rFont">
+              </label>
+          </div>
+          <button class="button icon-left ion-locked button-block button-energized rFont rFont-login" type="submit" on-tap="doLogin()">Login</button>
+          <button class="button button-clear button-light rFont rFront-forgot">Forgot Password?</button>
+      </div>
+    </center>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view class="" title="" hide-nav-bar="true" cache-view="false" hide-back-button="true">
+    <ion-content>
+        <form>
+            <div class="item item-image">
+                <img src="img/login/login-ibm-watson.png" height="400px" class="loginImg">
+            </div>
+            <div class="signInMsg" id="signMsg">Sign into your account</div>
+            <div class="privacy">IBM Employee Directory Application Provided by IBM Corp N.A Member FDIC Credit cards are issued by IBM Corp NA
+                <br/>@2015 IBM Corp.
+            </div>
+            <div class="list overlay box" id="login-box1">
+                <label class="item item-input rFont">
+                    <input type="text" placeholder="Enter your username" ng-model="user.username" class="rFont">
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Enter your password" ng-model="user.password" class="rFont">
+                </label>
+                <button class="button icon-left ion-locked button-block button-positive button-small rFont rFont-login" type="submit" on-tap="doLogin()">Login</button>
+                <button class="button button-clear button-positive button-small rFont rFront-forgot">Forgot User ID or Password?</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

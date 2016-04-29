@@ -1,0 +1,34 @@
+{
+  "name": "employee",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "description": "first name of employee"
+    },
+    "img": {
+      "type": "string",
+      "required": true,
+      "description": "link to image of employee"
+    },
+    "job_title": {
+      "type": "string",
+      "required": true,
+      "description": "job title of employee"
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "description": "last name of employee"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

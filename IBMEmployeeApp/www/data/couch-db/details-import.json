@@ -1,0 +1,63 @@
+{ "docs": [
+    {
+        "_id" : "01800192",
+        "address": "3721 S Ocean Dr, Hollywood, FL, 33019",
+        "email": "Mike_Chepesky@ibm.com",
+        "mobile": "347-344-1101",
+        "fax": "347-344-1102"        
+    },{
+        "_id" : "01800193",
+        "address": "305 E 86th St, New York, NY, 10028",
+        "email": "Amy.Jones@us.ibm.com",
+        "mobile": "646-020-1121",
+        "fax": "637-033-2211"        
+    },{
+        "_id" : "01800121",
+        "address": "1211 3rd Ave, New York, NY, 10021",
+        "email": "Eugene_Lee@ca.ibm.com",
+        "mobile": "433-111-2212",
+        "fax": "322-332-1121"        
+    },{
+        "_id" : "01800114",
+        "address": "251 174th St, Sunny Isles Beach, FL, 33016",
+        "email": "Gary.Donovan@us.ibm.com",
+        "mobile": "929-222-2210",
+        "fax": "321-444-3120"        
+    },{
+        "_id" : "01800145",
+        "address": "100 Park Ave, New York, NY, 10022",
+        "email": "John.Williams@ca.ibm.com",
+        "mobile": "917-019-1193",
+        "fax": "212-002-2211"        
+    },{
+        "_id" : "01800231",
+        "address": "200 E 65th St, New York, NY, 10021",
+        "email": "Kathleen.Byrne@us.ibm.com",
+        "mobile": "646-003-1199",
+        "fax": "212-001-8989"        
+    },{
+        "_id" : "01800211",
+        "address": "12191 2nd Ave, New York, NY, 10022",
+        "email": "Lise.Wong@ibm.com",
+        "mobile": "212-001-4431",
+        "fax": ""        
+    },{
+        "_id" : "01800133",
+        "address": "50 Astor Place, New York, NY, 10001",
+        "email": "Paula_Gates@ibm.com",
+        "mobile": "212-992-8818",
+        "fax": ""        
+    },{
+        "_id" : "01800091",
+        "address": "3800 S Ocean Dr, Hollywood, FL, 33019",
+        "email": "Paul_Jones@ibm.com",
+        "mobile": "954-990-1121",
+        "fax": ""        
+    },{
+        "_id" : "01800292",
+        "address": "121 5th Ave, New York, NY, 10010",
+        "email": "Steven.Wells@us.ibm.com",
+        "mobile": "347-002-9911",
+        "fax": ""        
+    }
+]}

@@ -1,0 +1,15 @@
+[
+    {
+        "_id" : "01800192",
+        "address": "Unknown Street, XX 12345",
+        "email": "employee1@company.com",
+        "mobile": "111-222-3333",
+        "fax": "111-222-4444"        
+    },{
+        "_id" : "01800193",
+        "address": "Unknown Street, XX 54321",
+        "email": "employee2@company.com",
+        "mobile": "999-888-3333",
+        "fax": "999-888-4444"        
+    }
+]

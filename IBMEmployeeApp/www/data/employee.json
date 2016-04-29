@@ -1,0 +1,73 @@
+[
+    {
+        "_id" : "01800192",
+        "first_name" : "Mike",
+        "last_name" : "Chepesky",
+        "img" : "male1.png",
+        "job_title" : "Sales Associate"
+        
+    },
+    {
+        "_id" : "01800193",
+        "first_name" : "Amy",
+        "last_name" : "Jones",
+        "img" : "female1.png",
+        "job_title" : "Sales Representative"
+    },    
+    {
+        "_id" : "01800121",
+        "first_name" : "Eugene",
+        "last_name" : "Lee",
+        "img" : "male2.png",
+        "job_title" : "CFO"
+    },
+    {
+        "_id" : "01800114",
+        "first_name" : "Gary",
+        "last_name" : "Donovan",
+        "img" : "male3.png",
+        "job_title" : "Marketing Manager"        
+    },    
+    {
+        "_id" : "01800145",
+        "first_name" : "John",
+        "last_name" : "Williams",
+        "img" : "male4.png",
+        "job_title" : "VP of Marketing"       
+    },
+    {
+        "_id" : "01800231",
+        "first_name" : "Kathleen",
+        "last_name" : "Byrne",
+        "img" : "female2.png", 
+        "job_title" : "Sales"       
+    },
+    {
+        "_id" : "01800211",
+        "first_name" : "Lisa",
+        "last_name" : "Wong",
+        "img" : "female3.png",
+        "job_title" : "Marketing Manager"       
+    },
+    {
+        "_id" : "01800133",
+        "first_name" : "Paula",
+        "last_name" : "Gates",
+        "img" : "female4.png",
+        "job_title" : "Software Architect"       
+    },
+    {
+        "_id" : "01800091",
+        "first_name" : "Paul",
+        "last_name" : "Jones",
+        "img" : "male1.png",
+        "job_title" : "QA Manager"              
+    },
+    {
+        "_id" : "01800292",
+        "first_name" : "Steven",
+        "last_name" : "Wells",
+        "img" : "male5.png",
+        "job_title" : "Software Architect"
+    }
+]

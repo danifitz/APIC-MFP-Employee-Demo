@@ -1,0 +1,66 @@
+type: bluemix
+server:
+  displayName: United Kingdom
+  name: eu-gb
+  host: eu.apiconnect.ibmcloud.com
+org:
+  url: 'https://eu.apiconnect.ibmcloud.com/v1/orgs/572366390cf23507ff11738c'
+  id: 572366390cf23507ff11738c
+  name: danielfitzgeraldukibmcom-apicmfpemployeedemo
+  status: active
+  orgType: apiProvider
+  displayName: daniel.fitzgerald@uk.ibm.com (apicmfpemployeedemo)
+  externalOrgId: 48a89fe6-02f8-440b-8275-d767def3d9d8
+  externalInviteOverride: 'https://new-console.eu-gb.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: 48a89fe6-02f8-440b-8275-d767def3d9d8
+  externalNativeOrgId: 4a9ddd15-8d56-43ac-bdc6-f3fb16fdc40c
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+catalog:
+  id: 572379eb0cf23507ff117403
+  shortName: employeecatalog
+  name: employeecatalog
+  sandbox: false
+app:
+  metadata:
+    guid: af00c13f-07af-42fe-a9ba-44ed57f0ce30
+    url: /v2/apps/af00c13f-07af-42fe-a9ba-44ed57f0ce30
+    created_at: '2016-04-29T14:36:26Z'
+    updated_at: '2016-04-29T15:52:11Z'
+  entity:
+    name: employeeapi
+    production: false
+    space_guid: 48a89fe6-02f8-440b-8275-d767def3d9d8
+    stack_guid: 423dd340-c07e-44c2-b7fb-601c10fd32d3
+    buildpack: null
+    detected_buildpack: 'SDK for Node.js(TM) (ibm-node.js-4.3.2, buildpack-v3.2-20160315-1257)'
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STARTED
+    version: 74d975cb-b77a-439d-bcfb-dc11b6a270aa
+    command: null
+    console: true
+    debug: null
+    staging_task_id: 95faca7ee21b4f23a05b994549e751f9
+    package_state: STAGED
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: false
+    docker_image: null
+    package_updated_at: '2016-04-29T15:49:49Z'
+    detected_start_command: ./vendor/initial_startup.rb
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    space_url: /v2/spaces/48a89fe6-02f8-440b-8275-d767def3d9d8
+    stack_url: /v2/stacks/423dd340-c07e-44c2-b7fb-601c10fd32d3
+    events_url: /v2/apps/af00c13f-07af-42fe-a9ba-44ed57f0ce30/events
+    service_bindings_url: /v2/apps/af00c13f-07af-42fe-a9ba-44ed57f0ce30/service_bindings
+    routes_url: /v2/apps/af00c13f-07af-42fe-a9ba-44ed57f0ce30/routes
+id: c7f01c5a-8119-418d-bb9e-37a4e9717205
+target: 1.0.0

@@ -1,0 +1,29 @@
+type: bluemix
+server:
+  displayName: United Kingdom
+  name: eu-gb
+  host: eu.apiconnect.ibmcloud.com
+org:
+  url: 'https://eu.apiconnect.ibmcloud.com/v1/orgs/572366390cf23507ff11738c'
+  id: 572366390cf23507ff11738c
+  name: danielfitzgeraldukibmcom-apicmfpemployeedemo
+  status: active
+  orgType: apiProvider
+  displayName: daniel.fitzgerald@uk.ibm.com (apicmfpemployeedemo)
+  externalOrgId: 48a89fe6-02f8-440b-8275-d767def3d9d8
+  externalInviteOverride: 'https://new-console.eu-gb.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: 48a89fe6-02f8-440b-8275-d767def3d9d8
+  externalNativeOrgId: 4a9ddd15-8d56-43ac-bdc6-f3fb16fdc40c
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+catalog:
+  id: 5723663a0cf23507ff117393
+  shortName: sb
+  name: Sandbox
+  sandbox: true
+app:
+  new: true
+  name: employeeapi
+id: f0f1c462-3036-43e0-afc1-22b0f12a660b
+target: 1.0.0

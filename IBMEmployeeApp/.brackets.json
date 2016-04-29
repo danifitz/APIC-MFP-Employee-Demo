@@ -1,0 +1,15 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/www/lib/ionic/js/ionic.min.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/platforms/ios/www/lib/ionic/js/ionic.min.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/www/lib/ionic/js/ionic.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/plugins/cordova-plugin-device/www/device.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/__www/lib/ionic/js/ionic.min.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/platforms/ios/www/lib/ionic/js/angular-ui/angular-ui-router.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/platforms/ios/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/plugins/cordova-plugin-splashscreen/src/tizen/SplashScreenProxy.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/plugins/cordova-plugin-splashscreen/src/blackberry10/index.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "/Users/eliran_pro/Documents/projects/Madrid2016/IBMEmployeeApp/plugins/cordova-plugin-splashscreen/tests/tests.js"
+    ]
+}

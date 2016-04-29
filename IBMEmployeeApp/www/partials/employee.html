@@ -1,0 +1,12 @@
+<ion-view class="pane custBack" title="Employee List" hide-back-button="true" cache-view="false" hide-nav-bar="false">
+    <ion-content padding="false">
+        <ion-list class="animate-ripple">
+            <a ng-repeat="employee in employees" ui-sref="detail({empId: employee._id})" class="item acct-list-item item-avatar item-icon-right">
+                <img ng-src="img/employee/{{employee.img}}">
+                <h2 class="item-acct-title karla">{{employee.first_name}} {{employee.last_name}}</h2>
+                <p class="merriweather">{{employee.job_title}}</p>
+                <i class="icon cust-ion-ios-stars"></i>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
