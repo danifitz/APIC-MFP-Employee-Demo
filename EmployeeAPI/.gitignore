@@ -17,6 +17,3 @@
 coverage
 node_modules
 npm-debug.log
-
-# Ignore server/datasources.json so we don't check in passwords to db's
-server/datasources.json
