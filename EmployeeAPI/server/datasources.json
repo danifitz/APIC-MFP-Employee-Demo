@@ -1,0 +1,10 @@
+{
+  "cloudantemployee": {
+    "url": "ask daniel f for credentials",
+    "database": "employees",
+    "username": "ask daniel f for credentials",
+    "password": "ask daniel f for credentials",
+    "name": "cloudantemployee",
+    "connector": "cloudant"
+  }
+}
