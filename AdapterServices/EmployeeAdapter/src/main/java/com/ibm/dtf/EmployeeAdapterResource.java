@@ -54,6 +54,8 @@ public class EmployeeAdapterResource {
 	// Define logger (Standard java.util.Logger)
 	static Logger logger = Logger.getLogger(EmployeeAdapterResource.class.getName());
 
+	static String API_ENDPOINT = "https://api.eu.apiconnect.ibmcloud.com/danielfitzgeraldukibmcom-apicmfpemployeedemo/employeecatalog/api/employees";
+
 	// Inject the MFP configuration API:
 	@Context
 	ConfigurationAPI configApi;
@@ -73,7 +75,7 @@ public class EmployeeAdapterResource {
 			logger.info(">> EmployeeAdapterResource: employees");
 			String rsp = null;
 			try {
-				rsp =  getHttp("http://employeenodeapp.mybluemix.net/employees");
+				rsp =  getHttp(API_ENDPOINT);
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -103,7 +105,7 @@ public class EmployeeAdapterResource {
 			System.out.println(">> id :[" + id + "]");
 			String rsp = null;
 			try {
-				rsp = getHttp("http://employeenodeapp.mybluemix.net/details?id=" + id);
+				rsp = getHttp(API_ENDPOINT + "/" + id);
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -121,6 +123,11 @@ public class EmployeeAdapterResource {
 			HttpGet request = new HttpGet(url);
 			// add request header
 			request.addHeader("User-Agent", USER_AGENT);
+
+			// add app client id and secret
+			request.addHeader("X-IBM-Client-Id", "89c00d6a-7954-40d3-8c1d-c6bfca2d3b33");
+			request.addHeader("X-IBM-Client-Secret", "xQ1dM0iM5hJ3kJ6fW2lN8aL5uM8gN7nI6yL5eA6pG7uM2iO2mV");
+			
 			HttpResponse response = client.execute(request);
 			System.out.println("Response Code : "
 		                + response.getStatusLine().getStatusCode());

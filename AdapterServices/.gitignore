@@ -1,0 +1,4 @@
+# ignore the generated class files etc
+**/target/*.*
+*/target/classes/
+*/target/adapter

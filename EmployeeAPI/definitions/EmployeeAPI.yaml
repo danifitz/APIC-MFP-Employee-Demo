@@ -300,5 +300,6 @@ x-ibm-configuration:
   assembly:
     execute:
       - invoke:
-          target-url: 'https://apiconnect-af00c13f-07af-42fe-a9ba-44ed57f0ce30.danielfitzgeraldukibmcom-apicmfpemployeedemo.apic.eu-gb.mybluemix.net'
+          target-url: 'https://apiconnect-af00c13f-07af-42fe-a9ba-44ed57f0ce30.danielfitzgeraldukibmcom-apicmfpemployeedemo.apic.eu-gb.mybluemix.net$(request.path)'
           tls-profile: 'client:Loopback-client'
+    catch: []
