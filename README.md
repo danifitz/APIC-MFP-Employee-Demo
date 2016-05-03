@@ -74,4 +74,19 @@ or `run.bat` (Windows) for example `$ ./run.sh`. Keep the server running in this
 
 12. Click 'Publish' again, this time select `Stage or Publish products` > `Select specific products` > `employeeapi` - Click publish
 13. Open the API Connect dashboard on Bluemix. Click on the `EmployeeCatalog`. Click the `Settings` tab. Click the `Portal` tab. Under `Portal Configuration` select `IBM Developer Portal`. Under `User Registration and Invitation` > `User Registry` choose `SAML`
-14. Once the portal has been setup you will receive an email FINISH THESE INSTRUCTIONS
+14. Once the portal has been setup you will receive an email, click the link in the email and create a portal `admin` account.
+15. In the Portal, logout and click login, use your IBM ID. Click on the `Apps` tab. Register a new application, this will be the Employee app. Note down the `Client ID` and `Client Secret`
+16. Click the `API Products` tab. Choose `EmployeeAPI` and scroll down to the `Plans` section. Click `Subscribe`. Choose the `Application` you just created and click Subscribe.
+
+You've now created an API Connect instance, deployed the API, configured it to be managed by Datapower, setup a Developer Portal, added a new subscriber Application and subscribed to an API plan.
+
+### Setup the mobile application
+
+#### Configure MobileFirst adapters
+1. In an editor, open `AdapterServices/EmployeeAdapter/EmployeeAdapterResource.java`
+2. Replace the variable `API_ENDPOINT` with your API Endpoint
+3. In the method `getHTTP()` replace the values in the two `X-IBM-Client-*` headers with the `Client ID` and `Client Secret` you noted down earlier
+4. Rebuild the adapters by running `$ mvn package` in the `EmployeeAdapter` directory
+5. Deploy the adapter to the MobileFirst server (make sure the server is running first)
+
+   `$ mfpdev adapter deploy`
