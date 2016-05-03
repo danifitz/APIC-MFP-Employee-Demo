@@ -1,5 +1,16 @@
 # API Connect & MobileFirst Platform Demo
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [API Connect & MobileFirst Platform Demo](#)
+	- [Prerequisites](#)
+	- [How to demo](#)
+	- [Set up your own demo instance](#)
+		- [Setting up Cloudant](#)
+		- [Setting up API Connect](#)
+		- [Setup the mobile application](#)
+			- [Configure MobileFirst adapters](#)
+
 ## Prerequisites
 1. Install [Node.js](https://nodejs.org), Java 7/8 and
 [Maven](https://maven.apache.org/)
