@@ -21,14 +21,12 @@ this shell and open a new shell.
 8. Change directory to the Demo
 `$ cd APIC-MFP-Employee-Demo`
 9. Build the `AuthAdapter` with Maven
-`$ cd AdapterServices/AuthAdapter`
-`$ mvn package`
+`$ cd AdapterServices/AuthAdapter && mvn package`
 10. Deploy the `AuthAdapter` to the MFP server
 `$ mfpdev adapter deploy`
 11. Repeat steps 9 & 10 for `EmployeeAdapter`
 12. Register the `IBMEmployeeApp` with the MFP server
-`$ cd ../../IBMEmployeeApp`
-`$ mfpdev app register`
+`$ cd ../../IBMEmployeeApp && mfpdev app register`
 13. Preview the app
 `$ mfpdev app preview`
 Choose `> mbs: Mobile Browser Simulator`
