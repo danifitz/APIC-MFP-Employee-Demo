@@ -1,0 +1,72 @@
+[
+  {
+    "first_name": "Aaron",
+    "img": "male2.png",
+    "job_title": "Operations Manager",
+    "last_name": "Carter",
+    "id": "2"
+  },
+  {
+    "first_name": "Jason",
+    "img": "male3.png",
+    "job_title": "Developer",
+    "last_name": "Cerrone",
+    "id": "3"
+  },
+  {
+    "first_name": "Derrick",
+    "img": "male1.png",
+    "job_title": "Marketing Manager",
+    "last_name": "Jacobs",
+    "id": "1"
+  },
+  {
+    "first_name": "Nadia",
+    "img": "unknown.png",
+    "job_title": "Marketing & Comms",
+    "last_name": "Smith",
+    "id": "10"
+  },
+  {
+    "first_name": "Marcus",
+    "img": "male4.png",
+    "job_title": "QA Lead",
+    "last_name": "Drubell",
+    "id": "4"
+  },
+  {
+    "first_name": "Sarah",
+    "img": "female1.png",
+    "job_title": "CEO",
+    "last_name": "Miguell",
+    "id": "6"
+  },
+  {
+    "first_name": "Michelle",
+    "img": "female2.png",
+    "job_title": "CTO",
+    "last_name": "Grant",
+    "id": "7"
+  },
+  {
+    "first_name": "Sam",
+    "img": "male5.png",
+    "job_title": "Developer",
+    "last_name": "Stone",
+    "id": "5"
+  },
+  {
+    "first_name": "Alexandra",
+    "img": "female3.png",
+    "job_title": "QA/Test",
+    "last_name": "Browne",
+    "id": "8"
+  },
+  {
+    "first_name": "Liz",
+    "img": "female4.png",
+    "job_title": "Product Manager",
+    "last_name": "Kershaw",
+    "id": "9"
+  }
+]
