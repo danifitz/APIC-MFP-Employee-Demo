@@ -234,6 +234,41 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  /employees/change-stream:
+    post:
+      tags:
+        - employee
+      summary: Create a change stream.
+      operationId: employee.createChangeStream__post_employees_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - employee
+      summary: Create a change stream.
+      operationId: employee.createChangeStream__get_employees_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
 definitions:
   employee:
     properties:
@@ -249,6 +284,15 @@ definitions:
       last_name:
         description: last name of employee
         type: string
+      email:
+        description: employees email address
+        type: string
+      address:
+        description: employees home address
+        type: string
+      mobile:
+        description: employees mobile number
+        type: string
       id:
         type: string
     required:
@@ -256,6 +300,9 @@ definitions:
       - img
       - job_title
       - last_name
+      - email
+      - address
+      - mobile
     additionalProperties: false
   x-any:
     properties: {}

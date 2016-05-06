@@ -52,8 +52,8 @@ ibmApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider)
       templateUrl: 'partials/details.html',
       controller: 'employeeDetailCtrl',
       resolve: {
-        employeeDetailList: function($stateParams, EmployeeDetailsService) {
-          return EmployeeDetailsService.getEmployeeDetails($stateParams.empId);
+        employeeDetailList: function($stateParams, EmployeeService) {
+          return EmployeeService.getEmployeeById($stateParams.empId);
         },
         empId: function($stateParams) {
           return $stateParams.empId;

@@ -25,6 +25,21 @@
       "type": "string",
       "required": true,
       "description": "last name of employee"
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "description": "employees email address"
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "description": "employees home address"
+    },
+    "mobile": {
+      "type": "string",
+      "required": true,
+      "description": "employees mobile number"
     }
   },
   "validations": [],

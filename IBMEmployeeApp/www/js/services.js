@@ -13,7 +13,7 @@ ibmApp.factory("EmployeeService", function($http){
                 employees = response.responseJSON;
                 return employees;
             }, function(response){
-                console.log("error:" + response);
+                console.log("error: ", response);
                 return null;
             });
         },
@@ -23,30 +23,13 @@ ibmApp.factory("EmployeeService", function($http){
         getEmployeeById: function(id){
             var _emp;
             angular.forEach(employees, function(emp) {
-                console.log(">> getEmployeeById :" + id + " ==  " + emp._id );
-                if(emp._id == id){ _emp = emp; }
+              console.log(">> getEmployeeById :" + id + " ==  " + emp.id );
+              if(emp.id == id){ _emp = emp; }
             });
             return _emp;
         }
     };
 })
-
-ibmApp.factory("EmployeeDetailsService", function($http){
-    console.log( ">> in EmployeeDetailsService ...");
-    return {
-        getEmployeeDetails: function(empId){
-            //using path param.
-            var resourceRequest = new WLResourceRequest(
-                "/adapters/EmployeeAdapter/services/details/" + empId, WLResourceRequest.GET
-            );
-            return resourceRequest.send().then(function(response){
-                return response.responseJSON;
-            }, function(response){
-                console.log("error:" + response);
-                return null;
-            });
-        }};
- })
 
 /* will be used to validate the username and password */
 ibmApp.factory("AuthenticateUserService", function ($http, $q) {
