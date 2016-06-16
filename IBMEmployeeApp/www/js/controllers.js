@@ -10,6 +10,9 @@ ibmApp.controller('appCtrl', function($scope) {
   }
 })
 
+ibmApp.controller('jobCtrl', ['$scope', function($scope) {
+}])
+
 ibmApp.controller('mainCtrl', ['$scope', 'employees', '$ionicPopup', function(
   $scope, employees, $ionicPopup) {
   console.log(">> in mainCtrl ... ");
