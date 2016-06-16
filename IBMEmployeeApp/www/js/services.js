@@ -12,9 +12,9 @@ ibmApp.factory("EmployeeService", function($http){
             return resourceRequest.send().then(function(response){
                 employees = response.responseJSON;
                 return employees;
-            }, function(response){
-                console.log("error: ", response);
-                return null;
+            }, function(error){
+                console.log("error: ", error);
+                return error;
             });
         },
         getEmployee: function(index){
