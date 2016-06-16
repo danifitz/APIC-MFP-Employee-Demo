@@ -269,6 +269,276 @@ paths:
           schema:
             type: file
       deprecated: false
+  /jobs:
+    post:
+      tags:
+        - job
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: job.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/job'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/job'
+      deprecated: false
+    put:
+      tags:
+        - job
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: job.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/job'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/job'
+      deprecated: false
+    get:
+      tags:
+        - job
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: job.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/job'
+      deprecated: false
+  '/jobs/{id}/exists':
+    get:
+      tags:
+        - job
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'job.exists__get_jobs_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/jobs/{id}':
+    head:
+      tags:
+        - job
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'job.exists__head_jobs_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - job
+      summary: Find a model instance by id from the data source.
+      operationId: job.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/job'
+      deprecated: false
+    delete:
+      tags:
+        - job
+      summary: Delete a model instance by id from the data source.
+      operationId: job.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - job
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: job.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/job'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/job'
+      deprecated: false
+  /jobs/findOne:
+    get:
+      tags:
+        - job
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: job.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/job'
+      deprecated: false
+  /jobs/update:
+    post:
+      tags:
+        - job
+      summary: Update instances of the model matched by where from the data source.
+      operationId: job.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/job'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /jobs/count:
+    get:
+      tags:
+        - job
+      summary: Count instances of the model matched by where from the data source.
+      operationId: job.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /jobs/change-stream:
+    post:
+      tags:
+        - job
+      summary: Create a change stream.
+      operationId: job.createChangeStream__post_jobs_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - job
+      summary: Create a change stream.
+      operationId: job.createChangeStream__get_jobs_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
 definitions:
   employee:
     properties:
@@ -306,6 +576,57 @@ definitions:
     additionalProperties: false
   x-any:
     properties: {}
+  job:
+    properties:
+      name:
+        description: name of the recipient
+        type: string
+      addressLine1:
+        description: address line 1 of the recipient
+        type: string
+      addressLine2:
+        description: address line 2 of the recipient
+        type: string
+      postcode:
+        description: postcode of the recipient
+        type: string
+      packages:
+        description: array of packages
+        type: array
+        items:
+          type: object
+      timeslot:
+        description: timeslot period of the delivery
+        type: string
+      deliveryDate:
+        description: date of delivery
+        type: string
+        format: date
+      location:
+        description: geolocation of delivery
+        $ref: '#/definitions/GeoPoint'
+      notes:
+        description: notes for the delivery driver
+        type: number
+        format: double
+      id:
+        type: string
+    required:
+      - name
+      - addressLine1
+      - addressLine2
+      - postcode
+      - packages
+      - timeslot
+      - deliveryDate
+      - location
+    additionalProperties: false
+  GeoPoint:
+    properties:
+      lat:
+        type: number
+      lng:
+        type: number
 swagger: '2.0'
 info:
   x-ibm-name: employeeapi

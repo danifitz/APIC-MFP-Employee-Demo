@@ -1,0 +1,62 @@
+{
+  "name": "job",
+  "plural": "jobs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "name of the recipient"
+    },
+    "addressLine1": {
+      "type": "string",
+      "required": true,
+      "description": "address line 1 of the recipient"
+    },
+    "addressLine2": {
+      "type": "string",
+      "required": true,
+      "description": "address line 2 of the recipient"
+    },
+    "postcode": {
+      "type": "string",
+      "required": true,
+      "description": "postcode of the recipient"
+    },
+    "packages": {
+      "type": [
+        "object"
+      ],
+      "required": true,
+      "description": "array of packages"
+    },
+    "timeslot": {
+      "type": "string",
+      "required": true,
+      "description": "timeslot period of the delivery"
+    },
+    "deliveryDate": {
+      "type": "date",
+      "required": true,
+      "description": "date of delivery"
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true,
+      "description": "geolocation of delivery"
+    },
+    "notes": {
+      "type": "number",
+      "required": false,
+      "description": "notes for the delivery driver"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
