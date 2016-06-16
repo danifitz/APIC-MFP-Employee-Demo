@@ -31,6 +31,30 @@ ibmApp.factory("EmployeeService", function($http){
     };
 })
 
+ibmApp.factory("JobService", function($http, $q) {
+  console.log(">> in JobService ...");
+  var jobs = [];
+  var resourceRequest = new WLResourceRequest(
+    "/adapters/JobsAdapter/services/list", WLResourceRequest.GET
+  );
+  return {
+    getJobs: function() {
+      return resourceRequest.send().then(function(response) {
+        jobs = response.responseJSON;
+        return jobs;
+      })
+    },
+    getJobById: function(jobId) {
+      var _job;
+      angular.forEach(jobs, function(job) {
+        console.log(">> getJobById :" + jobId + " ==  " + job.id );
+        if(job.id === jobId) { _job = job; }
+      });
+      return _job;
+    }
+  }
+})
+
 /* will be used to validate the username and password */
 ibmApp.factory("AuthenticateUserService", function ($http, $q) {
     console.log(">> in AuthenticateUserService ...");
