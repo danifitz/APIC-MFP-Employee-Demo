@@ -6,9 +6,9 @@
     <title></title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/ionicons.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <!-- your app's js -->
@@ -16,23 +16,23 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body ng-app="ibmApp" ng-controller="appCtrl">      
+  <body ng-app="ibmApp" ng-controller="appCtrl">
       <!--  enable-menu-with-back-views="true" - fix the issue with the side-menu button not showing. -->
       <ion-side-menus enable-menu-with-back-views="true" ng-cloak>
         <!-- right menu -->
         <ion-side-menu side="right">
             <ul class="list menuList">
-			  	<a nav-clear menu-close class="item item-icon-left" ui-sref="splash">			  		
-                    <i class="icon ion-key"></i>Home
-			  	</a>			  	
+			  	<a nav-clear menu-close class="item item-icon-left" ui-sref="jobs">
+                    <i class="icon ion-key"></i>My Jobs
+			  	</a>
 			  	<a menu-close class="item item-icon-left" ui-sref="main">
 			  		<i class="icon"></i> Employee List
-			  	</a>	  				  	
+			  	</a>
 			  	<a nav-clear menu-close class="item item-icon-left" ui-sref="splash" on-tap="logout()">
 			  		<i class="icon ion-locked"></i> Logout
 			  	</a>
 		  	</ul>
-        </ion-side-menu>                        
+        </ion-side-menu>
         <ion-side-menu-content>
         <!-- Main content, usually <ion-nav-view>  nav-title-slide-ios7 -->
             <ion-nav-bar class="bar-positive" align-title="center" ng-cloak>
@@ -43,12 +43,10 @@
                     <!-- Toggle left side menu -->
                     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
                 </ion-nav-buttons>
-            </ion-nav-bar>            
+            </ion-nav-bar>
             <ion-nav-view></ion-nav-view>
         </ion-side-menu-content>
-      </ion-side-menus>      
-  </body>    
+      </ion-side-menus>
+  </body>
   <!-- animation js -->
-  <script src='js/move.js'></script>    
-    
-    
+  <script src='js/move.js'></script>

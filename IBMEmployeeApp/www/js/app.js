@@ -40,6 +40,20 @@ ibmApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider)
         }
       })
 
+      .state('jobs', {
+        url: '/jobs',
+        templateUrl: 'partials/jobs.html',
+        controller: 'jobsCtrl'
+        // resolve: {
+        //   employeeDetailList: function($stateParams, EmployeeService) {
+        //     return EmployeeService.getEmployeeById($stateParams.empId);
+        //   },
+        //   empId: function($stateParams) {
+        //     return $stateParams.empId;
+        //   }
+        // }
+      })
+
     .state('splash', {
       url: '/',
       /* default url */
