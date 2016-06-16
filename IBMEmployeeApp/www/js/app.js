@@ -44,36 +44,33 @@ ibmApp.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider)
         url: '/jobs',
         templateUrl: 'partials/jobs.html',
         controller: 'jobsCtrl'
-        // resolve: {
-        //   employeeDetailList: function($stateParams, EmployeeService) {
-        //     return EmployeeService.getEmployeeById($stateParams.empId);
-        //   },
-        //   empId: function($stateParams) {
-        //     return $stateParams.empId;
-        //   }
-        // }
+        resolve: {
+          job: function(JobsService) {
+            return JobsService.getJobs();
+          }
+        }
       })
 
-    .state('splash', {
-      url: '/',
-      /* default url */
-      templateUrl: 'pages/splash.html',
-      controller: 'splashCtrl'
-    })
+      .state('splash', {
+        url: '/',
+        /* default url */
+        templateUrl: 'pages/splash.html',
+        controller: 'splashCtrl'
+      })
 
-    .state('detail', {
-      url: '/detail/:empId',
-      templateUrl: 'partials/details.html',
-      controller: 'employeeDetailCtrl',
-      resolve: {
-        employeeDetailList: function($stateParams, EmployeeService) {
-          return EmployeeService.getEmployeeById($stateParams.empId);
-        },
-        empId: function($stateParams) {
-          return $stateParams.empId;
+      .state('detail', {
+        url: '/detail/:empId',
+        templateUrl: 'partials/details.html',
+        controller: 'employeeDetailCtrl',
+        resolve: {
+          employeeDetailList: function($stateParams, EmployeeService) {
+            return EmployeeService.getEmployeeById($stateParams.empId);
+          },
+          empId: function($stateParams) {
+            return $stateParams.empId;
+          }
         }
-      }
-    })
+      })
   }) // end of app config.
   // Add MobileFirst configuration stuff.
 var Messages = {

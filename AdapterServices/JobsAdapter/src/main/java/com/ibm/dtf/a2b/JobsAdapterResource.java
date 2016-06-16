@@ -34,7 +34,7 @@ import com.ibm.mfp.adapter.api.ConfigurationAPI;
 import com.ibm.mfp.adapter.api.OAuthSecurity;
 
 @Api(value = "Sample Adapter Resource")
-@Path("/resource")
+@Path("/Jobs")
 public class JobsAdapterResource {
 	/*
 	 * For more info on JAX-RS see
@@ -48,119 +48,55 @@ public class JobsAdapterResource {
 	@Context
 	ConfigurationAPI configApi;
 
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource"
-	 */
+	static String API_ENDPOINT = "https://api.eu.apiconnect.ibmcloud.com/danielfitzgeraldukibmcom-apicmfpemployeedemo/employeecatalog/api/jobs";
 
-	@ApiOperation(value = "Returns 'Hello from resource'", notes = "A basic example of a resource returning a constant string.")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Hello message returned") })
+	/*
+		 * Path for method:
+		 * "<server address>/mfp/api/adapters/Jobs/services/list"
+	*/
+
+	@ApiOperation(value = "Get job list", notes = "Return job list")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "A constant string is returned") })
 	@GET
+	@Path("/list")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String getResourceData() {
-		// log message to server log
-		logger.info("Logging info message...");
-
-		return "Hello from resource";
-	}
-
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource/greet/{name}"
-	 */
-
-	@ApiOperation(value = "Query Parameter Example", notes = "Example of passing query parameters to a resource. Returns a greeting containing the name that was passed in the query parameter.")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Greeting message returned") })
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/greet")
-	public String helloUser(
-			@ApiParam(value = "Name of the person to greet", required = true) @QueryParam("name") String name) {
-		return "Hello " + name + "!";
-	}
-
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource/{path}/"
-	 */
-
-	@ApiOperation(value = "Multiple Parameter Types Example", notes = "Example of passing parameters using 3 different methods: path parameters, headers, and form parameters. A JSON object containing all the received parameters is returned.")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "A JSON object containing all the received parameters returned.") })
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{path}")
-	public Map<String, String> enterInfo(
-			@ApiParam(value = "The value to be passed as a path parameter", required = true) @PathParam("path") String path,
-			@ApiParam(value = "The value to be passed as a header", required = true) @HeaderParam("Header") String header,
-			@ApiParam(value = "The value to be passed as a form parameter", required = true) @FormParam("form") String form) {
-		Map<String, String> result = new HashMap<String, String>();
-
-		result.put("path", path);
-		result.put("header", header);
-		result.put("form", form);
-
-		return result;
-	}
-
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource/prop"
-	 */
-
-	@ApiOperation(value = "Configuration Example", notes = "Example usage of the configuration API. A property name is read from the query parameter, and the value corresponding to that property name is returned.")
-	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "Property value returned."),
-			@ApiResponse(code = 404, message = "Property value not found.") })
-	@GET
-	@Path("/prop")
-	@Produces(MediaType.TEXT_PLAIN)
-	public Response getPropertyValue(
-			@ApiParam(value = "The name of the property to lookup", required = true) @QueryParam("propertyName") String propertyName) {
-		// Get the value of the property:
-		String value = configApi.getPropertyValue(propertyName);
-		if (value != null) {
-			// return the value:
-			return Response
-					.ok("The value of " + propertyName + " is: " + value)
-					.build();
-		} else {
-			return Response.status(Status.NOT_FOUND)
-					.entity("No value for " + propertyName + ".").build();
+	public String employees() {
+		System.out.println(">> in employees() ...");
+		logger.info(">> EmployeeAdapterResource: employees");
+		String rsp = null;
+		try {
+			rsp =  getHttp(API_ENDPOINT);
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
+		return rsp;
 	}
 
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource/unprotected"
-	 */
+	public String getHttp(String url) throws ClientProtocolException, IOException{
+		HttpClient client = HttpClientBuilder.create().build();
+		HttpGet request = new HttpGet(url);
+		// add request header
+		request.addHeader("User-Agent", USER_AGENT);
 
-	@ApiOperation(value = "Unprotected Resource", notes = "Example of an unprotected resource, this resource is accessible without a valid token.")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "A constant string is returned") })
-	@GET
-	@Path("/unprotected")
-	@Produces(MediaType.TEXT_PLAIN)
-	@OAuthSecurity(enabled = false)
-	public String unprotected() {
-		return "Hello from unprotected resource!";
+		// add app client id and secret
+		request.addHeader("X-IBM-Client-Id", "89c00d6a-7954-40d3-8c1d-c6bfca2d3b33");
+		request.addHeader("X-IBM-Client-Secret", "xQ1dM0iM5hJ3kJ6fW2lN8aL5uM8gN7nI6yL5eA6pG7uM2iO2mV");
+
+		HttpResponse response = client.execute(request);
+		System.out.println("Response Code : "
+									+ response.getStatusLine().getStatusCode());
+
+		BufferedReader rd = new BufferedReader(
+			new InputStreamReader(response.getEntity().getContent()));
+		StringBuffer result = new StringBuffer();
+		String line = "";
+		while ((line = rd.readLine()) != null) {
+			result.append(line);
+		}
+		return result.toString();
 	}
-
-	/*
-	 * Path for method:
-	 * "<server address>/mfp/api/adapters/JobsAdapter/resource/protected"
-	 */
-
-	@ApiOperation(value = "Custom Scope Protection", notes = "Example of a resource that is protected by a custom scope. To access this resource a valid token for the scope 'myCustomScope' must be acquired.")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "A constant string is returned") })
-	@GET
-	@Path("/protected")
-	@Produces(MediaType.TEXT_PLAIN)
-	@OAuthSecurity(scope = "myCustomScope")
-	public String customScopeProtected() {
-		return "Hello from a resource protected by a custom scope!";
-	}
-
-
-
-
 }
