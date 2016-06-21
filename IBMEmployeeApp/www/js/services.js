@@ -35,22 +35,37 @@ ibmApp.factory("JobService", function($http, $q) {
   console.log(">> in JobService ...");
   var jobs = [];
   var resourceRequest = new WLResourceRequest(
-    "/adapters/JobsAdapter/services/list", WLResourceRequest.GET
+    "/adapters/JobsAdapter/Jobs/list", WLResourceRequest.GET
   );
   return {
     getJobs: function() {
-      return resourceRequest.send().then(function(response) {
-        jobs = response.responseJSON;
-        return jobs;
-      })
+      if(jobs.length > 0) {
+        return jobs
+      } else {
+        return resourceRequest.send().then(function(response) {
+          jobs = response.responseJSON;
+          return jobs;
+        }, function(error) {
+          console.log('error ', error)
+          return error
+        })  
+      }
     },
     getJobById: function(jobId) {
       var _job;
       angular.forEach(jobs, function(job) {
-        console.log(">> getJobById :" + jobId + " ==  " + job.id );
         if(job.id === jobId) { _job = job; }
       });
+      console.log(' >> getJobById found job ', _job.id);
       return _job;
+    },
+    removeJob: function(jobId) {
+      jobs.forEach(function(currentVal, index, array) {
+        if(currentVal.id === jobId) {
+          console.log('removing job with id ', jobId)
+          jobs.splice(index, 1)
+        }
+      })
     }
   }
 })

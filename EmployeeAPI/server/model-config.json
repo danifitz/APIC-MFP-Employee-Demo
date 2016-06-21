@@ -16,5 +16,9 @@
   "employee": {
     "dataSource": "cloudantemployee",
     "public": true
+  },
+  "job": {
+    "dataSource": "cloudantjobs",
+    "public": true
   }
 }

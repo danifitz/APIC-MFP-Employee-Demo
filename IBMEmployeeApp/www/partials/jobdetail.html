@@ -1,0 +1,36 @@
+<ion-view class="pane" title="Job Details" hide-back-button="false" cache-view="false" hide-nav-bar="false">
+    <ion-content>
+        <div class="list">
+            <div class="item item-icon-left item-emp-card">
+                <i class="icon ion-person"></i>
+                <h2 class="empName karla">{{job.name}}</h2>
+                <p class="empTitle karla">{{job.postcode}}</b>
+                </p>
+            </div>
+            <a href="#" ui-sref="jobmap({ jobId: job.id })" class="item item-icon-left item-text-wrap item-emp-card karla size14px">
+                <i class="icon ion-home"></i>{{job.addressLine1}}, {{job.addressLine2}}
+            </a>
+            <a href="#" class="item item-icon-left item-emp-card merriweather size14px">
+                <i class="icon ion-clock"></i>{{job.timeslot}}
+            </a>
+            <div href="#" class="item item-icon-left item-emp-card karla size14px">
+                <p>
+                  Packages
+                </p>
+                <div ng-repeat="package in job.packages">
+                  <i class="icon ion-cube"></i>{{package.id}} - {{package.weight}}
+                </div>
+            </div>
+            <button ng-click="sendNotification()" class="button icon-left button-block button-energized">
+              <i class="icon ion-chatbox-working"></i>
+              Send customer notification
+            </button>
+            <button class="button button-block button-assertive">
+              I'm unable to deliver this package
+            </button>
+            <a ui-sref="signature({ jobId: job.id })">
+              <button class="button button-block button-positive">Confirm Delivery</button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
